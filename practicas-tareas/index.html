@@ -1,0 +1,140 @@
+<!-- NOTICIA -->
+
+<!-- LINK DE LA WEB PAGE DE LA NOTICIA: -->
+<!-- https://www.lanacion.com.ar/politica/en-el-poder-ejecutivo-hay-descalabro-con-los-sueldos-y-el-gobierno-busca-corregirlo-con-un-paquete-nid21042024/-->
+
+<! DOCTYPE html>
+
+<html> <!-- Inicio -->
+
+<head>
+    <!-- TITULO DE LA NOTICIA-->
+    <title> Noticia </title>
+
+    <!-- Vinculando archivo css -->
+    <link rel="stylesheet" href="styles.css"
+</head>
+
+<body>
+
+    <header>
+        <!-- Un campo de texto -->
+        <form>
+            <label for="buscar"> Buscar </label>
+            <input type="text" id="buscar" name="titulo_noticia" placeholder="Noticia"/>
+        </form>
+
+        <!-- Nombre del titulo -->
+    
+        <h1 id="titulo"> La Nación </h1>
+
+        <!-- Link de inicio de sesión a la pagina de La Nación-->
+        <a target="_blank"
+            href="https://login.lanacion.com.ar/u/login?state=hKFo2SBXd0hsUDFVbUl2VDRLNWpaaV94LU55V1VVSk9LM2I4SqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIGVtVkpQMGxTM3lGWTNJcmZTeU16dk4yWFd4cERLNTl1o2NpZNkgUDhNNndnU0pqVzNxWVR5cHhyR0ppOHZmMHVUVDNMT3c">
+            Iniciar Sesion
+        </a>
+    </header>
+
+    <section>
+        <hr> <!-- Separador -->
+        <!-- tabla-->
+        <table style="width: 1000px;">
+            <thead>
+                <th>Dolar oficial</th>
+                <th>Dolar blue</th>
+                <th>Dolar turista</th>
+                <th>Dolar CCL</th>
+            </thead>
+            <tbody>
+                <td>$912,74</td>
+                <td>$1015,00</td>
+                <td>$1460,38</td>
+                <td>$41067,67</td>
+
+            </tbody>
+        </table>
+
+        <hr>
+        <h3> Las ultimas medidas del Gobierno</h3> <p> Hace 9 min </p>
+        <hr>
+
+            <!-- LISTAS -->
+        <!-- LISTA NO ORDENADA <ul><\ul> -->
+        <!-- LISTA ORDENADA <ol><\ol> -->
+        
+        <ol>
+            <li>Ultimas noticias</li>
+            <li>Politica</li>
+            <li>Economia</li>
+            <li>El mundo
+                <ol>
+                    <li style="list-style-type:  lower-alpha;">Argentina</li>
+                    <li style="list-style-type:  lower-alpha;">Estados Unidos</li>
+                    <li style="list-style-type:  lower-alpha;">Mexico</li>
+                </ol>
+            </li>
+            <li>Sociedad</li>
+            <li>Opinion</li>
+            <li>Deportes</li>
+            <li>Lifestyle</li>
+            <li>Espectaculos</li>
+        </ol>
+
+        <article class="post">
+            <!-- Noticia 1-->
+            <h1> Tras la polemica. En el Poder Ejecutivo hay descalabro con los sueldos y el 
+            <br> Gobierno busca corregirlo con un "paquete anticasta"</h1>
+        
+            <p> Milei esta en una cruzada contra el aumento de las dietas de los senadores, pero en el gabineta hay 
+            <br>salarios que quedaron muy desfasados; la idea para impulsar una normalización general con un nuevo
+            <br>paquete de leyes.</p>
+
+            <br> <!-- Añadir fecha actual -->
+
+            <!-- INSERTAR IMAGEN -->
+            <img src="img/imagen1.avif" width="800"/>
+            <p>La reunion de gabinete encabeza por el presidente Javier Milei en Casa Rosada</p>
+
+            <p><br>Javier Milei colgo una bandera que reza que el politico que se sube el sueldo es casta. 
+                <br> Con su cruzada simbolica contra el Congreso -que el presidente capotaliza en el peor 
+                <br> momento del ajuste del Poder Ejecutivo se profundizo una encerrona....
+            </p>
+        </article>
+
+        <article class="post">
+            <hr>
+            <!-- Noticia 2-->
+            <h1>Raices de la crisis.</h1>
+            
+            <p>El verdadero significado de la "batalla cultural"</p>
+    
+            <br> <!-- Añadir fecha actual -->
+    
+            <!-- INSERTAR IMAGEN -->
+            <img src="img/imagen2.avif" width="800"/>
+    
+            <p>Descripcion....</p>
+
+        </article>
+
+        <article class="comentarios">
+            <!-- AGREGAREMOS UN CAMPO PARA COMENTARIOS-->
+            <hr><br><br>
+            <form action="/formulario" method="POST">
+                <label for="comentario"></label>
+                <textarea rows="10" cols="70" id="comentario"  
+                placeholder="Ingrese comentario" name="comentario">este es un comentario por defecto </textarea>
+
+                <!-- AGREGAR BOTON -->
+                <button type="button"> Enviar </button>
+            </form>
+        </article>
+    </section>
+
+    <footer>
+        <a target="_blank" href="https://www.facebook.com/lanacion">Contactanos por Facebook</a>
+        <p>Copyright  2024</p>
+    </footer>
+    
+</body>
+</html> <!-- Fin -->

@@ -1,0 +1,54 @@
+<!-- EJERCICIOS EN CLASE (29 DE ABRIL)-->
+
+<!-- EJEMPLO 1: ROTAR UNA IMAGEN -->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script type = "text/javascript">
+
+        function retornarLienzo(x){
+            var canvas = document.getElementById(x);
+            if (canvas.getContex){
+                var lienzo = canvas.getContex("2d");
+                return lienzo;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function dibujar(){
+            var  lienzo = retornarLienzo("lienzo1");
+            if (lienzo){
+                lienzo.clearRect(0,0,600,600);
+                lienzo.save();
+                lienzo.translate(300,300);
+                lienzo.rotate(avance);
+                lienzo.drawImage(img1,-125,-125);
+                avance += 0.05;
+                if (avance>Math.PI*2){
+                    avance = 0;
+                }
+                lienzo.restore();
+            }
+        }
+
+        var avance = 0;
+
+        var img1;
+        function incio(){
+            img1 = newImage();
+            img1.src = 'http://www.htmlya.com.ar/simulador/foto1.jpg';
+            img1.onload = funtion(){
+                setInterval(dibujar,50);
+            }
+        }
+    </script>
+</head>
+<body onLoad = "incio()">
+    <canvas id = "lienzo1" width = "600" height="600">
+        Su navegador no permite usar canvas.
+    </canvas>
+</body>
+</html>
