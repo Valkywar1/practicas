@@ -1,0 +1,63 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Parcial2.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <!-- permite que la pg sea responsive ajustando su tamanio al ancho de dispositivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Define el titulo, utilizando page.title para incluir un titulo dinamico -->
+    <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
+
+    <asp:PlaceHolder runat="server"> 
+        <%: Scripts.Render("~/bundles/modernizr") %> <!-- Incluye un bundle de css que se renderiza en el servidor -->
+    </asp:PlaceHolder>
+
+    <!-- Contenedor p/scripts de la bilbioteca modernizr,
+     que se renderiza en el servidor -->
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server"> <!-- administra y carga scripts en la pg -->
+            <Scripts> <!-- se especifican referencias a varios scripts necesarios -->
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" /> <!-- biblioteca jquery-->
+                <asp:ScriptReference Name="bootstrap" /> <!-- biblioteca bootstrap para diseño responsivo -->
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="container body-content"> <!-- aplicar stilos css
+            dentro del contenedor se define un contentplaceholder con id maincontent
+            actua como un marcador se posicion donde el contenido especifico de la pg se inserta -->
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>
+
+<!-- define  una pagina maestra para una app asp.net 
+ la pg maestra proporciona una estructura comun como referencias a scripst esenciales
+ , hojas de estilo, manejo de eventos 
+ Constent Place Holder permite que las ppg derivadas se inserten
+ contenido especifico en el marcador de posicion maincontent.
+ Los script y estilos se gestionan a traves del scriptmanager y el bundling, asegurando
+ una carga eficiente y organizada de los recuersos necesarios para la app -->
